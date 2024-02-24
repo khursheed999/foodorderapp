@@ -7,7 +7,7 @@ import MealItem from "./MealItem";
     async function fetchMeals(){
         const  res=await fetch('http://localhost:3000/meals');
         if(!res.ok){
-   
+          throw new Error('Failed to connect');
         }
         const meals=await res.json();
         setLoadedMeals(meals);

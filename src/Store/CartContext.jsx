@@ -5,10 +5,12 @@ const CartContext = createContext({
     removeItem: (id) => { },
     modelPopUp:Boolean,
     setModelPopUp:Boolean,
+    checkOUtPopUp:Boolean,
+    setCheckOutPOpUp:Boolean,
 });
 function CartReducer(state, action) {
     if (action.type === 'ADD_ITEM') {
-        console.log('i am in Add block')
+     
         const existingCartItemIndex = state.items.findIndex((item) => item.id === action.item.id);
         const updatedItems = [...state.items];
         const existingItem = state.items[existingCartItemIndex];
@@ -66,6 +68,7 @@ function CartReducer(state, action) {
 
 export const CartContexProvider = ({ children }) => {
     const [modelPopUp,setModelPopUp]=useState(false);
+    const [checkOUtPopUp,setCheckOutPOpUp]=useState(false);
     const [cart, dispatchCartAction] = useReducer(CartReducer, {
         items: [],
     });
@@ -82,6 +85,8 @@ export const CartContexProvider = ({ children }) => {
         removeItem,
         modelPopUp,
         setModelPopUp,
+        checkOUtPopUp,
+        setCheckOutPOpUp
     }
     return <CartContext.Provider value={cartContextItems}>{children}</CartContext.Provider>
 

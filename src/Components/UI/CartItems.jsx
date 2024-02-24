@@ -3,7 +3,9 @@ import Button from "./Button";
 import CartContext from "../../Store/CartContext";
 
 const CartItems=({item})=>{
+
         const {addItem,removeItem,items}= useContext(CartContext);
+       
     
         function handleAddItem(){
         
@@ -23,6 +25,7 @@ const CartItems=({item})=>{
      {item.quantity}
      <Button onClick={handleAddItem}>+</Button>
     </div>
+  
      </li>
 }
 export default CartItems;

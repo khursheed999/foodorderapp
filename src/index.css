@@ -174,17 +174,17 @@ h1 {
   align-items: center;
 }
 
-.cart-item-actions button {
+.cart-item-actions Button {
   cursor: pointer;
   font-size: 1rem;
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 50%;
   border: none;
-  background-color: #312c1d;
-  color: #ffc404;
+  background-color: #aa1bc0;
+  color: #3991b6;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
@@ -218,23 +218,30 @@ h1 {
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
+  margin-top: 5px;
 }
 
 .button {
   font: inherit;
   cursor: pointer;
-  background-color: #ffc404;
-  border: 1px solid #ffc404;
-  color: #1f1a09;
-  padding: 0.5rem 1.5rem;
+  background-color: #f2efe7;
+  border: 1px solid red;
+  color: #191403;
+  padding: 10px 30px;
   border-radius: 4px;
+  margin-top: 5px;
+}
+.control-section{
+  display: flex;
+  justify-content: flex-end;
+  gap: 40px;
 }
 
 .button:hover,
 .button:active {
-  background-color: #ffab04;
-  border-color: #ffab04;
-  color: #1f1a09;
+  background-color: #d0b060;
+  border-color: #b66003;
+  color: #dfdcd1;
 }
 
 .text-button {
@@ -245,17 +252,18 @@ h1 {
   color: #ffc404;
 }
 
-.text-button:hover,
-.text-button:active {
-  color: #ffab04;
+.text-button:hover{
+  color: #ffc404;
+  background-color: #ccc;
 }
-.modal-wrapper{
+
+/* .modal-wrapper{
   display: flex;
   align-items: center;
-  text-align: center;}
+  text-align: center;} */
 .modal {
   position: fixed;
-  top: 20rem;
+  top: 10rem;
   left: 50px;
   right: 200px;
   background-color: #e4ddd4;
@@ -266,6 +274,20 @@ h1 {
    width: 80%;
   max-width: 40rem;
   animation: fade-slide-up 0.3s ease-out forwards;
+}
+.checkOut-modal {
+  position: fixed;
+   color: black;
+  left: 50px;
+  right: 200px;
+  background-color: #e4ddd4;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  padding: 1rem;
+   width: 80%;
+  max-width: 40rem;
+  animation: fade-slide-up 0.6s ease-out forwards;
 }
 
 .modal::backdrop {
@@ -282,4 +304,12 @@ h1 {
     opacity: 1;
     transform: translateY(0);
   }
+}
+.hide{
+  opacity: 0;
+  pointer-events: none;
+}
+.show{
+  opacity: 1;
+  pointer-events: auto;
 }

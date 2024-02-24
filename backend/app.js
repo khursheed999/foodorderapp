@@ -36,8 +36,8 @@ app.post('/orders', async (req, res) => {
     orderData.customer.name.trim() === '' ||
     orderData.customer.street === null ||
     orderData.customer.street.trim() === '' ||
-    orderData.customer['postal-code'] === null ||
-    orderData.customer['postal-code'].trim() === '' ||
+    orderData.customer.postalcode === null ||
+    orderData.customer.postalcode.trim() === '' ||
     orderData.customer.city === null ||
     orderData.customer.city.trim() === ''
   ) {
@@ -46,6 +46,7 @@ app.post('/orders', async (req, res) => {
         'Missing data: Email, name, street, postal code or city is missing.',
     });
   }
+  console.log(orderData);
 
   const newOrder = {
     ...orderData,
@@ -57,7 +58,6 @@ app.post('/orders', async (req, res) => {
   await fs.writeFile('./data/orders.json', JSON.stringify(allOrders));
   res.status(201).json({ message: 'Order created!' });
 });
-
 app.use((req, res) => {
   if (req.method === 'OPTIONS') {
     return res.sendStatus(200);

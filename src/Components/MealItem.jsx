@@ -9,7 +9,6 @@ const { addItem}=useContext(CartContext);
 
     function handleAddMealToCart(){
           addItem(meal);
-          console.log(meal);
     }
     return <li className="meal-item">
         <article>
